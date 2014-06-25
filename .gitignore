@@ -1,1 +1,3 @@
 /.project
+/apps/helloExpress/node_modules
+/apps/mongoApp/node_modules

@@ -1,0 +1,7 @@
+h1 All users
+
+ul
+	each user in users
+		li: a(href="/users/#{user.name}") #{user.name} (#{user.email})
+		
+a(href="/users/new") Add New user

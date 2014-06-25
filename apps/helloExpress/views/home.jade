@@ -1,0 +1,58 @@
+include mixins
+
+h1 Hello Express!
+h2= title
+
+style
+	li { background: blue }
+	
+- var name = "<em>Swapnil</em>";
+- var fn = function(){ return "Hello Express!!";};
+- var followerCount = 2;
+- var users = [{name: "Swapnil", email:"sopu10@gmail.com"},{name: "Ashwini", email: "ashu@gmail.com"},{name: "Sandesh", email: "sandesh@gmail.com"}, {name: "Saurabh", email: "saurabh@gmail.com"}];
+
+ul
+	each user,i in users
+		mixin userLi(user)
+		
+ul
+	each userObject,i in users
+		include user
+		
+- if(followerCount === 0){
+	p You have no followers.
+-} else if(followerCount === 1){
+	p You have one followers.
+-} else {
+	p You have #{followerCount} followers.
+-}
+
+p
+	if followerCount === 0
+		| You have no followers.
+	else if followerCount === 1
+		| You have one followers.
+	else 
+		| You have #{followerCount} followers.
+		
+ul#nav
+	li.nav-class one
+	li !{name}
+	li #{1+2}
+	li= name
+	li= fn()
+		a(href="/other", rel="noFollow") Go to other
+	
+p I want to put long text . . .
+
+p 
+	| I want
+	| to put
+	| long text
+	| ...
+	
+p.
+	I want 
+	to put
+	a very long
+	text . . .
